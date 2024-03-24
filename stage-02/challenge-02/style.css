@@ -1,0 +1,75 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+
+    text-align: center;
+}
+
+#hero {
+    width: 626px;
+
+    margin: 64px auto;
+}
+
+#hero img {
+    margin-bottom: 32px;
+}
+
+#hero h1 {
+    margin-bottom: 16px;
+
+    font-size: 32px;
+    color: #3F3D56;
+}
+
+#hero h1 strong {
+    color: #EE24FF;
+}
+
+p {
+    font-size: 15px;
+    color: #828282;
+}
+
+p strong#flutuar {
+    color: #828282;
+}
+
+p strong {
+    color: #3F3D56;
+}
+
+#hero p + p {
+    margin-top: 32px;
+}
+
+#footer {
+    margin: 0 auto;
+}
+
+#line {
+    margin: 0 auto;
+    width: 391px;
+    height: 0;
+
+    border: 1px solid #ECEFF2;
+    margin-bottom: 16px;
+}
+
+#footer a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    color: #3F3D56;
+}
+
+#footer a + a {
+    margin-left: 42px;
+}
+
+#wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+}
