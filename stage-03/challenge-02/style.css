@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --hue: 150;
+    --color-base-white: #FFF;
+    --color-base-white-100: #F4FCFF;
+    --color-base-black-300: #202024;
+    --color-base-black-500: #121214;
+    --color-base-blue: #065E7C;
+}
+
+html, body, input {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--color-base-white-100);
+    color: var(--color-base-black-500);
+}
