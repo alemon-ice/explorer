@@ -66,7 +66,7 @@ header input {
 .content {
     flex: 1;
     display: grid;
-    grid-template-columns: 6fr 2fr;
+    grid-template-columns: 4fr 2fr;
 
     padding: 4rem 11.2rem;
     gap: 3.4rem;
@@ -78,7 +78,7 @@ main {
     gap: 3rem;
 }
 
-main img {
+main > img {
     width: 100%;
     aspect-ratio: 9/4;
     object-fit: cover;
@@ -151,13 +151,17 @@ aside ul li img {
     border-radius: 4px;
 }
 
-aside ul li h3 {
+aside ul li div {
+    width: 60%;
+}
+
+aside ul li div h3 {
     font-size: 1.8rem;
     line-height: 2.4rem;
     color: var(--color-base-black-300);
 }
 
-aside ul li p {
+aside ul li div p {
     font-size: 1.4rem;
     line-height: 2.1rem;
     color: var(--color-base-black-300);
@@ -179,3 +183,30 @@ footer p {
     font-weight: 600;
 }
 
+@media (max-width: 1024px) {
+    header {
+        padding: 1.6rem 2.8rem;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0;
+    }
+    
+    main .title, main article, aside {
+        padding: 0 2.2rem;
+    }
+
+    aside {
+        padding-bottom: 4rem;
+    }
+
+    main > img {
+        width: 100%;
+        aspect-ratio: 9/4;
+        object-fit: cover;
+        border-radius: 0;
+    }
+}
