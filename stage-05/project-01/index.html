@@ -11,23 +11,24 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<script src="./script.js"></script>
 <body>
     <main>
-        <div class="screen1 hide">
+        <div class="screen1">
             <h1>Jogo da Adivinhação</h1>
             <p>Adivinhe um número entre 0 e 10</p>
-    
+            
             <form action="">
-                <input type="number">
-                <button>Tentar</button>
+                <input id="inputNumber" type="number" min="0" max="10">
+                <button onclick="handleClick(event)">Tentar</button>
             </form>
         </div>
-
-        <div class="screen2">
-            <h2>Acertou em 3 vezes</h2>
+        
+        <div class="screen2 hide">
+            <h2>Acertou em X tentativas</h2>
             <button>Jogar novamente</button>
         </div>
     </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>
