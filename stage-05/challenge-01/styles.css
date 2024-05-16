@@ -1,0 +1,173 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%; 
+    --card-bg-color: #FFFAFA;
+    --text-color: #34355B;
+    --btn-color: #FF9500;
+    --btn-color-hover:#d87e00;
+    --note-bg-color: #E4EDF1;
+    --white: #fff;
+    --black:#000;
+}  
+
+h1 {
+    text-align: center; 
+    font-family: "Montserrat", sans-serif; 
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700; 
+    
+}
+
+p { 
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400; 
+}
+
+body {
+    font-size: 1.6rem;
+    background: linear-gradient(45deg, #190361 0%, #BB00FF 100%);
+    height: 100vh;
+    overflow-y: hidden;
+}
+ 
+.step1 { 
+    margin:23.9rem auto;  
+    width: min(42.8rem, 90%);   
+    height: fit-content;
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;  
+
+    border-radius: 5px; 
+    background-color: var(--card-bg-color);
+    box-shadow: 0rem 2rem 5rem 0rem rgba(0, 0, 0, 0.80);
+} 
+
+.content {
+    text-align: center;
+    color:var(--text-color);
+} 
+
+.step1 p {
+    padding:  1.4rem 0rem 2.6rem 0rem;
+    
+}
+
+.step1 button {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background-color: transparent;
+}
+
+.step1 img {  
+    text-align: center;
+}
+
+.step1 img:hover {
+    -webkit-animation: vibrationAnimation 3s linear infinite both;
+    animation: vibrationAnimation 0.3s linear infinite both;
+}
+
+.step2 { 
+    margin:16rem  auto;  
+    width: min(42.8rem, 90%);   
+    height: fit-content;
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;  
+
+    border-radius: 5px; 
+    background-color: var(--card-bg-color);
+    box-shadow: 0rem 2rem 5rem 0rem rgba(0, 0, 0, 0.80);
+}  
+
+.step2 #message { 
+    margin-top: 1.7rem;
+    background-color: var(--note-bg-color); 
+    padding: 1rem;
+    box-shadow: .2rem .2rem .2rem 0rem rgba(85, 85, 85, 0.50);
+    animation: noteAnimation 1.5s both;
+
+} 
+
+.step2 #message p { 
+    font-family: "Dancing Script", cursive;
+    font-size:2.4rem;
+    color: var(--black);
+
+
+}
+.step2 img {
+    margin-top: 1.7rem;
+
+}
+.step2 button { 
+    margin-top: 1.7rem;
+
+    border: none;
+    background: var(--btn-color);
+    color: var(--white);
+
+    padding: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+
+    width: 17.4rem;
+
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.step2 button:hover {
+    background-color: var(--btn-color-hover);
+    color: var(--white);
+}
+
+.hide {
+    display: none;
+}
+@keyframes vibrationAnimation {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes noteAnimation {
+    0% {
+        transform: scale(.4) translateY(400px);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
