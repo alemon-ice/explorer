@@ -1,7 +1,10 @@
-class Router {
+export class Router {
+    routes = {}
+
     add(routeName, page) {
         this.routes[routeName] = page
     }
+
     route(event) {
         event = event || window.event
         event.preventDefault()
@@ -10,10 +13,11 @@ class Router {
     
         this.handle()
     }
+
     handle() {
         const { pathname } = window.location
         
-        route = this.routes[pathname] || this.routes[404]
+        const route = this.routes[pathname] || this.routes[404]
     
         fetch(route).then((data) => data.text()).then((html) => {
             document.querySelector('#app').innerHTML = html
