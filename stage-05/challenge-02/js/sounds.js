@@ -7,7 +7,7 @@ import {
 
 export default function() {
     const buttonPressAudio = new Audio("./assets/audios/button-press.wav")
-    const kitchenTimer = new Audio("./assets/audios/kichen-timer.mp3")
+    const kitchenTimer = new Audio("./assets/audios/kitchen-timer.mp3")
     const bgAudioForest = new Audio("./assets/audios/forest.wav")
     const bgAudioRain = new Audio("./assets/audios/rain.wav")
     const bgAudioCoffeeShop = new Audio("./assets/audios/coffee-shop.wav")
