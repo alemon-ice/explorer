@@ -140,6 +140,8 @@ td.actions button {
     border: none;
 
     color: red;
+
+    cursor: pointer;
 }
 
 td.user img {
