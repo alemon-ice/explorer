@@ -1,25 +1,43 @@
+export class GithubUser {
+    static search(username) {
+        const endpoint = `https://api.github.com/users/${username}`
+
+        return fetch(endpoint)
+            .then(data => data.json())
+            .then(({ login, name, public_repos, followers }) => ({
+                login,
+                name,
+                public_repos,
+                followers,
+            }))
+    }
+}
+
 export class Favorites {
     constructor(root) {
         this.root = document.querySelector(root)
 
         this.load()
+
+        GithubUser.search('alemon-ice').then(user => console.log({user}))
     }
 
     load() {
-        const entries = [
-            {
-                login: 'alemon-ice',
-                name: 'Rafael dias',
-                public_repos: 11,
-                followers: 16
-            },
-            {
-                login: 'torvalds',
-                name: 'Linus Torvalds',
-                public_repos: 7,
-                followers: 208000
-            }
-        ]
+        // const entries = [
+        //     {
+        //         login: 'alemon-ice',
+        //         name: 'Rafael dias',
+        //         public_repos: 11,
+        //         followers: 16
+        //     },
+        //     {
+        //         login: 'torvalds',
+        //         name: 'Linus Torvalds',
+        //         public_repos: 7,
+        //         followers: 208000
+        //     }
+        // ]
+        const entries = JSON.parse(localStorage.getItem('@github-favorites:entries')) || []
         this.entries = entries
     }
 
