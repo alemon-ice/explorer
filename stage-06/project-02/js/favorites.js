@@ -18,8 +18,6 @@ export class Favorites {
         this.root = document.querySelector(root)
 
         this.load()
-
-        GithubUser.search('alemon-ice').then(user => console.log({user}))
     }
 
     load() {
@@ -41,10 +39,28 @@ export class Favorites {
         this.entries = entries
     }
 
+    save() {
+        localStorage.setItem('@github-favorites:entries', JSON.stringify(this.entries))
+    }
+
+    async add(username) {
+        try {
+            const user = await GithubUser.search(username)
+            if (user.login === undefined) {
+                throw new Error('Usuário não encontrado!')
+            }
+            this.entries = [user, ...this.entries]
+            this.update()
+        } catch (error) {
+            alert(error.message)
+        }
+    }
+
     delete(user) {
         const filteredEntries = this.entries.filter(entry => entry.login !== user.login)
         this.entries = filteredEntries
         this.update()
+        this.save()
     }
 }
 
@@ -55,6 +71,16 @@ export class FavoritesView extends Favorites {
         this.tbody = this.root.querySelector('table tbody')
 
         this.update()
+        this.onAdd()
+    }
+
+    onAdd() {
+        const addButton = this.root.querySelector('.github-search button')
+        console.log('achei', addButton)
+        addButton.onclick = () => {
+            const { value } = this.root.querySelector('.github-search input')
+            this.add(value)
+        }
     }
 
     update() {
